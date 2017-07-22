@@ -17,21 +17,22 @@ func main(){
 }
 
 func handler(w http.ResponseWriter, r *http.Request){
-	  fmt.Fprint(w, "Welcome to Home Page!\n")	
+     fmt.Fprint(w, "Welcome to Home Page!\n")	
 }
 
-func contacts(w http.ResponseWriter, r *http.Request){
-	fmt.Println(r.URL.Path) // gets the path or current route being used
-    fmt.Fprintf(w, "CUSTOMERS\n")
+func contacts(w http.ResponseWriter, r *http.Request){ 
+    
+     fmt.Println(r.URL.Path) // gets the path or current route being used
+     fmt.Fprintf(w, "CUSTOMERS\n")
 
-	  m := make(map[string]int)
+      m := make(map[string]int)
 
       m["Mike"] = 20
       m["James"] = 30
-	  m["Mark"] = 25
+      m["Mark"] = 25
 
-	  for k, v := range m {
-		 fmt.Fprint(w, "Name: ", k, "\nAge: ", v, "\n------------\n")
+     for k, v := range m {
+         fmt.Fprint(w, "Name: ", k, "\nAge: ", v, "\n------------\n")
       }
 }
 
