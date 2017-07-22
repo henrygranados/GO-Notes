@@ -5,10 +5,10 @@ import ("fmt"
 "github.com/julienschmidt/httprouter")
 
 func main(){
-	
-	router := httprouter.New()
+	 
+    router := httprouter.New()
     router.GET("/", IndexPage)
-	router.GET("/about", AboutPage)
+    router.GET("/about", AboutPage)
     http.ListenAndServe(":8081", router)
 }
 
@@ -19,7 +19,7 @@ func IndexPage(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 
 func AboutPage(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
-	fmt.Println(r.URL.Path) // gets the path or route being used
+      fmt.Println(r.URL.Path) // gets the path or route being used
       fmt.Fprintf(w, "All contacts")
 }
 
